@@ -31,34 +31,35 @@ class SinglyLinkedList {
   //removes the last node from the list and returns it
   pop() {
     if (!this.head) {
-      return undefined;
+      return null;
     }
 
-    let currentHead = this.head;
-    let newTail = currentHead;
+    let currentNode = this.head;
+    let newTail = currentNode;
 
-    while (currentHead.next) {
-      newTail = currentHead;
-      currentHead = currentHead.next;
+    while(currentNode.next) {
+      newTail = currentNode;
+      currentNode = currentNode.next;
     }
 
-    if (this.head === this.tail) {
+    if(this.head === this.tail) {
       this.head = null;
       this.tail = null;
     } else {
-      newTail.next = null;
+      newTail.tail = null;
       this.tail = newTail;
     }
 
     this.length--;
-    return currentHead;
+    return currentNode;
+
   }
 
   //add a new node to the beginning of the list and return the list
   unshift(value) {
     const newNode = new Node(value);
 
-    if (!this.head) {
+    if(!this.head) {
       this.head = newNode;
       this.tail = newNode;
     } else {
@@ -67,41 +68,29 @@ class SinglyLinkedList {
     }
 
     this.length++;
-    return this;
+    return this;  
   }
 
   //removes the first node from the list and returns its value
   shift() {
-    if (!this.head) {
-      return undefined;
-    }
 
-    let currentHead = this.head;
-    this.head = currentHead.next;
-    this.length--;
-
-    if (this.length === 0) {
-      this.tail = null;
-    }
-
-    return removedNode;
   }
 
   //returns the value of the node at the given index
-  get(index) {}
+  get(index) { }
 
   //updates the value of the node at the given index
-  set(index, value) {}
+  set(index, value) { }
 
   //inserts a new node at the given index
-  insert(index, value) {}
+  insert(index, value) { }
 
   //removes the node at the given index
-  remove(index) {}
+  remove(index) { }
 
   //reverse the list
-  reverse() {}
+  reverse() { }
 
   //print the list
-  print() {}
+  print() { }
 }
