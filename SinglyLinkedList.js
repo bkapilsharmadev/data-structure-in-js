@@ -77,7 +77,23 @@ class SinglyLinkedList {
   }
 
   //returns the value of the node at the given index
-  get(index) { }
+  get(index) {
+    if(index < 0 || index >= this.length) {
+      return null;
+    }
+
+    let i = 0;
+    let currentNode = this.head;
+
+    while(currentNode.next) {
+      if(index === i) {
+        return currentNode;
+      }
+      currentNode = currentNode.next;
+      i++;
+    }
+
+  }
 
   //updates the value of the node at the given index
   set(index, value) { }
