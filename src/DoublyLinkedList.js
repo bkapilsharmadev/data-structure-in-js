@@ -67,20 +67,17 @@ class DoublyLinkedList {
 
         let i = 0;
         let currentNode = this.head;
-        let adjacentNode = null;
 
         while(i !== index) {
-            adjacentNode = currentNode
             currentNode = currentNode.next;
             i++;
         }
 
         const newNode = new Node(value);
         newNode.next = currentNode;
-        newNode.prev = adjacentNode;
-
+        newNode.prev = currentNode.prev;
+        currentNode.prev.next = newNode;
         currentNode.prev = newNode;
-        adjacentNode.next = newNode;
 
         this.size++;
         return this;

@@ -240,3 +240,5 @@ class SinglyLinkedList {
     return output;
   }
 }
+
+module.exports = SinglyLinkedList;
